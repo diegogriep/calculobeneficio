@@ -1,0 +1,40 @@
+body{
+	font-family: "Nunito", Arial, sans-serif;
+	font-weight: 300;
+}
+
+.wrapper{
+	width: 94%;
+	margin: 0 3%;
+}
+
+h1, h2, h3, h4{
+	font-weight: 400;
+	margin: 10px 0 0;
+	padding: 0;
+}
+
+h2{
+	margin-bottom: 10px;
+}
+
+fieldset{
+	width: 30%;
+	position: relative;
+}
+
+label{
+	display: block;
+	padding-top: 10px;
+}
+
+footer p{
+	font-size: 0.8em;
+	text-align: center;
+}
+
+.bottom-right{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}

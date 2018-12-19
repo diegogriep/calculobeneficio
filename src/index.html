@@ -16,26 +16,26 @@
 			</hgroup>
 		</header>
 		
-		<section>
-			<form name="infobasic">
+		<section class="form-resultado">
+			<form name="infobasic" onsubmit="calculate(event)">
 				<fieldset>
 					<legend>Informações básicas</legend>
 					<label for="day">
 						Trabalha mais quantos dias?
 					</label>
-					<input type="text" name="day" id="day" placeholder="0" >
+					<input type="text" name="day" id="day" placeholder="0">
 						
 					<label for="benefit">
 						Quanto ganha de benefício por dia?
 					</label>
-					<input type="text" name="benefit" id="benefit" placeholder="0" >
+					<input type="text" name="benefit" id="benefit" placeholder="0">
 						
 					<label for="ticket">
 						Quanto ainda tem no ticket?
 					</label>
 					<input type="text" name="ticket" id="ticket" placeholder="0"> 
 						
-					<input type="button" id="calc" value="Calcula" class="bottom-right" onclick="calculate()">
+					<input type="submit" id="calc" value="Calcula" class="bottom-right">
 				</fieldset>
 				
 				<h3>Resultado <span id="result"></span></h3>

@@ -1,8 +1,10 @@
-var day, benefit, ticket, result;
-var form = document.infobasic;
-var output = document.querySelector('h3');
+function calculate(e) {
 
-function calculate() {
+  let day, benefit, ticket, result;
+  let form = document.infobasic;
+  let output = document.querySelector('h3');
+  e.preventDefault(); 
+
 	day = parseFloat(form.day.value);
 	benefit = parseFloat(form.benefit.value);
 	ticket = parseFloat(form.ticket.value);

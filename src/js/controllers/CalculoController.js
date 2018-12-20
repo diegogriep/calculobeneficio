@@ -6,6 +6,7 @@ class CalculoController {
     this._inputDaysRemaining = $('#day');
     this._inputTicketRemaining = $('#ticket');
     this._inputCurrentDay = $('#currentDay');
+    this._result = $('#result');
   }
 
   calculate(event) {
@@ -22,6 +23,6 @@ class CalculoController {
       DateHelper.textoParaData(this._inputCurrentDay.value)
     );
 
-    console.log(DateHelper.dataParaTexto(calculo.currentDay));
+    this._result.innerHTML = calculo.result;
   }
 }

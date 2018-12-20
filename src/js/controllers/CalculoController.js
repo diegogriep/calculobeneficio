@@ -13,19 +13,15 @@ class CalculoController {
 
     //let data = new Date(this._inputCurrentDay.value.split('-')); //passar array para date
     //let data = new Date(this._inputCurrentDay.value.replace(/-/g, ',')); //trocar todos hifens por virgula
-    let data = new Date(...
-      this._inputCurrentDay.value
-        .split('-')
-        .map((item, indice) => item - indice % 2)
-    ); //spread operator(...) - desmembra array e coloca na mesma posição/parametro do constructor
+    //spread operator(...) - desmembra array e coloca na mesma posição/parametro do constructor
     //quando tem uma unica instrucao na arrow function, pode omitir o bloco
 
     let calculo = new Calculo(
       this._inputDaysRemaining.value,
       this._inputTicketRemaining.value,
-      data
+      DateHelper.textoParaData(this._inputCurrentDay.value)
     );
 
-    console.log(calculo);
+    console.log(DateHelper.dataParaTexto(calculo.currentDay));
   }
 }

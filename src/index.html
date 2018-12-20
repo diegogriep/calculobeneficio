@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
 	<title>Cálculo Benefício</title>
@@ -15,38 +15,47 @@
 				<h2>E aí, quanto falta para o mês acabar? Será que seu benefício vai dar? Faça as contas!</h2>
 			</hgroup>
 		</header>
-		
+
 		<section class="form-resultado">
-			<form name="infobasic" onsubmit="calculate(event)">
+			<form name="infobasic" onsubmit="calculoController.calculate(event)">
 				<fieldset>
 					<legend>Informações básicas</legend>
 					<label for="day">
 						Trabalha mais quantos dias?
 					</label>
-					<input type="text" name="day" id="day" placeholder="0">
-						
-					<label for="benefit">
+          <input type="text" name="day" id="day" placeholder="0">
+
+          <label for="day">
+            Que dia é hoje?
+          </label>
+          <input type="date" name="currentDay" id="currentDay">
+
+					<!-- <label for="benefit">
 						Quanto ganha de benefício por dia?
 					</label>
-					<input type="text" name="benefit" id="benefit" placeholder="0">
-						
+					<input type="text" name="benefit" id="benefit" placeholder="0"> -->
+
 					<label for="ticket">
 						Quanto ainda tem no ticket?
 					</label>
-					<input type="text" name="ticket" id="ticket" placeholder="0"> 
-						
+					<input type="text" name="ticket" id="ticket" placeholder="0">
+
 					<input type="submit" id="calc" value="Calcula" class="bottom-right">
 				</fieldset>
-				
+
 				<h3>Resultado <span id="result"></span></h3>
 			</form>
 		</section>
-		
+
 		<footer>
 			<p>Colaborators: diegogriep,</p>
 		</footer>
 	</div>
-	
-	<script type="text/javascript" src="js/main.js"></script>
+
+	<script type="text/javascript" src="js/models/Calculo.js"></script>
+	<script type="text/javascript" src="js/controllers/CalculoController.js"></script>
+	<script>
+		let calculoController = new CalculoController();
+	</script>
 </body>
 </html>

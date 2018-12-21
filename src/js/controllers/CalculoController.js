@@ -6,7 +6,10 @@ class CalculoController {
     this._inputDaysRemaining = $('#day');
     this._inputTicketRemaining = $('#ticket');
     this._inputCurrentDay = $('#currentDay');
-    this._result = $('#result');
+    this._listaCalculos = new ListaCalculos();
+
+    this._calculosView = new CalculosView($('#calculosView'));
+    //this._calculosView.update(this._listaCalculos);
   }
 
   calculate(event) {
@@ -17,12 +20,29 @@ class CalculoController {
     //spread operator(...) - desmembra array e coloca na mesma posição/parametro do constructor
     //quando tem uma unica instrucao na arrow function, pode omitir o bloco
 
-    let calculo = new Calculo(
+    this._listaCalculos.adiciona(this._criaCalculo());
+    this._calculosView.update(this._criaCalculo());
+    this._limpaFormulario();
+    this._focoCampo();
+
+    //this._result.innerHTML = calculo.result;
+  }
+
+  _criaCalculo() {
+    return new Calculo(
       this._inputDaysRemaining.value,
       this._inputTicketRemaining.value,
       DateHelper.textoParaData(this._inputCurrentDay.value)
     );
+  }
 
-    this._result.innerHTML = calculo.result;
+  _limpaFormulario() {
+    this._inputDaysRemaining.value = 0;
+    this._inputTicketRemaining.value = 0;
+    this._inputCurrentDay.value = '';
+  }
+
+  _focoCampo() {
+    this._inputDaysRemaining.focus();
   }
 }
